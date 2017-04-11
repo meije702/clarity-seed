@@ -12,7 +12,9 @@ import { HomeComponent } from './home/home.component';
 export const ROUTES: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
-    {path: 'dashboard', loadChildren: 'app/_modules/dashboard/dashboard.module#DashboardModule' }
+    {path: 'dashboard', loadChildren: 'app/_modules/dashboard/dashboard.module#DashboardModule' },
+    {path: 'report', loadChildren: 'app/_modules/report/report.module#ReportModule' },
+    {path: 'masterdata', loadChildren: 'app/_modules/masterdata/masterdata.module#MasterdataModule' }
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROUTES);

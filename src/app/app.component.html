@@ -10,12 +10,14 @@
         <div class="header-nav" [clr-nav-level]="1">
             <a routerLink='/home' class="nav-link" [class.active]="router.url==='/home' || router.url==='/'"><span class="nav-text">Home</span></a>
             <a routerLink='/dashboard' class="nav-link" [class.active]="router.url.startsWith('/dashboard')"><span class="nav-text">Dashboard</span></a>
+            <a routerLink='/report' class="nav-link" [class.active]="router.url.startsWith('/report')"><span class="nav-text">Reporting</span></a>
+            <a routerLink='/masterdata' class="nav-link" [class.active]="router.url.startsWith('/masterdata')"><span class="nav-text">Masterdata</span></a>
         </div>
 
     </clr-header>
-    <div class="content-container">
-        <div class="content-area">
-        <router-outlet></router-outlet>
-        </div>
-    </div>
+    <!--<div class="content-container">
+        <div class="content-area">-->
+    <router-outlet></router-outlet>
+    <!--</div>
+    </div>-->
 </clr-main-container>

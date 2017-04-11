@@ -6,6 +6,7 @@
 import { Component } from "@angular/core";
 
 @Component({
+    host: { '[class.content-container]': 'true' },
     styleUrls: ['./home.component.scss'],
     templateUrl: './home.component.html',
 })
