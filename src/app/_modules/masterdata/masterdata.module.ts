@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { MasterdataRoutingModule } from './masterdata-routing.module';
 import { MasterdataListComponent } from './masterdata-list/masterdata-list.component';
+import { MasterdataNavComponent } from './masterdata-nav/masterdata-nav.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import { MasterdataListComponent } from './masterdata-list/masterdata-list.compo
     MasterdataRoutingModule,
     ClarityModule
   ],
-  declarations: [MasterdataListComponent]
+  declarations: [MasterdataListComponent, MasterdataNavComponent]
 })
 export class MasterdataModule { }

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { ReportRoutingModule } from './report-routing.module';
 import { ReportListComponent } from './report-list/report-list.component';
+import { ReportNavComponent } from './report-nav/report-nav.component';
+import { SolgraderReportComponent } from './solgrader-report/solgrader-report.component';
 
 @NgModule({
   imports: [
@@ -11,6 +13,6 @@ import { ReportListComponent } from './report-list/report-list.component';
     ReportRoutingModule,
     ClarityModule
   ],
-  declarations: [ReportListComponent]
+  declarations: [ReportListComponent, ReportNavComponent, SolgraderReportComponent]
 })
 export class ReportModule { }

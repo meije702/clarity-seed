@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { MasterdataListComponent } from './masterdata-list/masterdata-list.component';
+import { MasterdataNavComponent } from './masterdata-nav/masterdata-nav.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'list', pathMatch: 'full'},
-  { path: 'list',    component: MasterdataListComponent }
+  {
+    path: '',
+    component: MasterdataNavComponent,
+    children: [
+      { path: 'list', component: MasterdataListComponent }
+    ]
+  }
 ];
 
 @NgModule({
