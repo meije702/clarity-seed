@@ -9,12 +9,13 @@
 
         <div class="header-nav" [clr-nav-level]="1">
             <a routerLink='/home' class="nav-link" [class.active]="router.url==='/home' || router.url==='/'"><span class="nav-text">Home</span></a>
+            <a routerLink='/dashboard' class="nav-link" [class.active]="router.url.startsWith('/dashboard')"><span class="nav-text">Dashboard</span></a>
         </div>
 
     </clr-header>
     <div class="content-container">
         <div class="content-area">
-            <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
         </div>
     </div>
 </clr-main-container>
