@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 import { MasterdataRoutingModule } from './masterdata-routing.module';
 import { MasterdataListComponent } from './masterdata-list/masterdata-list.component';
 import { MasterdataNavComponent } from './masterdata-nav/masterdata-nav.component';
+import { PotatoMasterdataComponent } from './potato-masterdata/potato-masterdata.component';
+import { FarmMasterdataComponent } from './farm-masterdata/farm-masterdata.component';
+import { FieldMasterdataComponent } from './field-masterdata/field-masterdata.component';
 
 @NgModule({
   imports: [
@@ -12,6 +15,6 @@ import { MasterdataNavComponent } from './masterdata-nav/masterdata-nav.componen
     MasterdataRoutingModule,
     ClarityModule
   ],
-  declarations: [MasterdataListComponent, MasterdataNavComponent]
+  declarations: [MasterdataListComponent, MasterdataNavComponent, PotatoMasterdataComponent, FarmMasterdataComponent, FieldMasterdataComponent]
 })
 export class MasterdataModule { }
