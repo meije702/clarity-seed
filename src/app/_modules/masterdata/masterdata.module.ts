@@ -7,6 +7,16 @@ import { MasterdataNavComponent } from './masterdata-nav/masterdata-nav.componen
 import { PotatoMasterdataComponent } from './potato-masterdata/potato-masterdata.component';
 import { FarmMasterdataComponent } from './farm-masterdata/farm-masterdata.component';
 import { FieldMasterdataComponent } from './field-masterdata/field-masterdata.component';
+import { FarmMasterdataListComponent } from './farm-masterdata-list/farm-masterdata-list.component';
+import { FarmMasterdataFilterComponent } from './farm-masterdata-filter/farm-masterdata-filter.component';
+import { PotatoMasterdataFilterComponent } from './potato-masterdata-filter/potato-masterdata-filter.component';
+import { PotatoMasterdataListComponent } from './potato-masterdata-list/potato-masterdata-list.component';
+import { PlotMasterdataComponent } from './plot-masterdata/plot-masterdata.component';
+import { PlotMasterdataFilterComponent } from './plot-masterdata-filter/plot-masterdata-filter.component';
+import { PlotMasterdataListComponent } from './plot-masterdata-list/plot-masterdata-list.component';
+import { DeviceMasterdataComponent } from './device-masterdata/device-masterdata.component';
+import { DeviceMasterdataFilterComponent } from './device-masterdata-filter/device-masterdata-filter.component';
+import { DeviceMasterdataListComponent } from './device-masterdata-list/device-masterdata-list.component';
 
 @NgModule({
   imports: [
@@ -18,7 +28,22 @@ import { FieldMasterdataComponent } from './field-masterdata/field-masterdata.co
     MasterdataNavComponent,
     PotatoMasterdataComponent,
     FarmMasterdataComponent,
-    FieldMasterdataComponent
+    FieldMasterdataComponent,
+    FarmMasterdataListComponent,
+    FarmMasterdataFilterComponent,
+    PotatoMasterdataFilterComponent,
+    PotatoMasterdataListComponent,
+    PlotMasterdataComponent,
+    PlotMasterdataFilterComponent,
+    PlotMasterdataListComponent,
+    DeviceMasterdataComponent,
+    DeviceMasterdataFilterComponent,
+    DeviceMasterdataListComponent
+  ],
+  exports: [
+    FarmMasterdataFilterComponent,
+    PotatoMasterdataFilterComponent,
+    PlotMasterdataFilterComponent
   ]
 })
 export class MasterdataModule { }
