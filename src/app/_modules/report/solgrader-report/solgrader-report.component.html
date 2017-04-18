@@ -1,14 +1,48 @@
-<ul class="list-group list-group-flush">
+<clr-tree-node [(clrTreeNodeExpanded)]="expanded">
+    Master data filter
+    <clr-tree-node [clrTreeNodeExpanded]="true">
+        Potato selection
+        <clr-tree-node>
+            <app-potato-masterdata-filter></app-potato-masterdata-filter>
+        </clr-tree-node>
+    </clr-tree-node>
+    <clr-tree-node [clrTreeNodeExpanded]="true">
+        Fasrm selection
+        <clr-tree-node>
+            <app-farm-masterdata-filter></app-farm-masterdata-filter>
+        </clr-tree-node>
+    </clr-tree-node>
+    <clr-tree-node [clrTreeNodeExpanded]="true">
+        Plot selection
+        <clr-tree-node>
+            <app-plot-masterdata-filter></app-plot-masterdata-filter>
+        </clr-tree-node>
+    </clr-tree-node>
+</clr-tree-node>
+
+<!--<ul class="list-group list-group-flush">
     <li class="list-group-item">
-        <app-potato-masterdata-filter></app-potato-masterdata-filter>
-    </li>
-    <li *ngIf="filterFarms" class="list-group-item">
-        <app-farm-masterdata-filter></app-farm-masterdata-filter>
+        <div class="toggle-switch">
+            <input type="checkbox" id="toglefilterPotatoes" [(ngModel)]="filterPotatoes">
+            <label for="toglefilterPotatoes">Potato filter</label>
+        </div>
+        <app-potato-masterdata-filter *ngIf="filterPotatoes"></app-potato-masterdata-filter>
     </li>
     <li class="list-group-item">
-       <app-plot-masterdata-filter></app-plot-masterdata-filter>
+        <div class="toggle-switch">
+            <input type="checkbox" id="toglefilterFarms" [(ngModel)]="filterFarms">
+            <label for="toglefilterFarms">Farm filter</label>
+        </div>
+        <app-farm-masterdata-filter *ngIf="filterFarms"></app-farm-masterdata-filter>
+    </li>
+    <li class="list-group-item">
+        <div class="toggle-switch">
+            <input type="checkbox" id="toglefilterPlots" [(ngModel)]="filterPlots">
+            <label for="toglefilterPlots">Plot filter</label>
+        </div>
+        <app-plot-masterdata-filter *ngIf="filterPlots"></app-plot-masterdata-filter>
     </li>
     <li class="list-group-item">
         Graph results
     </li>
-</ul>
+</ul>-->

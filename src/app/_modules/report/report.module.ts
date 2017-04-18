@@ -1,6 +1,7 @@
 import { ClarityModule } from 'clarity-angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 
 import { ReportRoutingModule } from './report-routing.module';
 import { MasterdataModule } from '../masterdata/masterdata.module';
@@ -11,6 +12,7 @@ import { SolgraderReportComponent } from './solgrader-report/solgrader-report.co
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     ReportRoutingModule,
     MasterdataModule,
     ClarityModule

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolgraderReportComponent implements OnInit {
   public filterFarms = true;
+  public filterPotatoes = true;
+  public filterPlots = false;
 
   constructor() { }
 

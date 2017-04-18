@@ -14,7 +14,8 @@ export const ROUTES: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'dashboard', loadChildren: 'app/_modules/dashboard/dashboard.module#DashboardModule' },
     {path: 'report', loadChildren: 'app/_modules/report/report.module#ReportModule' },
-    {path: 'masterdata', loadChildren: 'app/_modules/masterdata/masterdata.module#MasterdataModule' }
+    {path: 'masterdata', loadChildren: 'app/_modules/masterdata/masterdata.module#MasterdataModule' },
+    {path: 'admin', loadChildren: 'app/_modules/admin/admin.module#AdminModule' }
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROUTES);
