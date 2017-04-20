@@ -1,3 +1,5 @@
+import { PotatoMasterdataService } from './_services/potato-masterdata.service';
+import { PlotMasterdataService } from './_services/plot-masterdata.service';
 import { FormsModule } from '@angular/forms';
 import { ClarityModule } from 'clarity-angular';
 import { NgModule } from '@angular/core';
@@ -47,7 +49,9 @@ import { FarmMasterdataService } from './_services/farm-masterdata.service';
     PlotMasterdataFilterComponent
   ],
   providers: [
-    FarmMasterdataService
+    FarmMasterdataService,
+    PlotMasterdataService,
+    PotatoMasterdataService
   ]
 })
 export class MasterdataModule { }

@@ -1,3 +1,12 @@
-<p>
-  potato-masterdata-list works!
-</p>
+<clr-datagrid>
+    <clr-dg-column [clrDgField]="'name'">Potato</clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let potato of potatoes" [clrDgItem]="potato">
+        <clr-dg-cell>{{potato.name}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} potatoes
+        <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+    </clr-dg-footer>
+</clr-datagrid>

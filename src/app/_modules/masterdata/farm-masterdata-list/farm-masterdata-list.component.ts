@@ -16,7 +16,6 @@ export class FarmMasterdataListComponent implements OnInit {
 
   ngOnInit() {
     this.farms = this.getFarms();
-    console.log('read farms' + this.farms.length);
   }
 
   private getFarms() {
