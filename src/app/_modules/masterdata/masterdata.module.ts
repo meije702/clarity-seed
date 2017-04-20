@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ClarityModule } from 'clarity-angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +7,6 @@ import { MasterdataRoutingModule } from './masterdata-routing.module';
 import { MasterdataNavComponent } from './masterdata-nav/masterdata-nav.component';
 import { PotatoMasterdataComponent } from './potato-masterdata/potato-masterdata.component';
 import { FarmMasterdataComponent } from './farm-masterdata/farm-masterdata.component';
-import { FieldMasterdataComponent } from './field-masterdata/field-masterdata.component';
 import { FarmMasterdataListComponent } from './farm-masterdata-list/farm-masterdata-list.component';
 import { FarmMasterdataFilterComponent } from './farm-masterdata-filter/farm-masterdata-filter.component';
 import { PotatoMasterdataFilterComponent } from './potato-masterdata-filter/potato-masterdata-filter.component';
@@ -17,18 +17,19 @@ import { PlotMasterdataListComponent } from './plot-masterdata-list/plot-masterd
 import { DeviceMasterdataComponent } from './device-masterdata/device-masterdata.component';
 import { DeviceMasterdataFilterComponent } from './device-masterdata-filter/device-masterdata-filter.component';
 import { DeviceMasterdataListComponent } from './device-masterdata-list/device-masterdata-list.component';
+import { FarmMasterdataService } from './_services/farm-masterdata.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    MasterdataRoutingModule,
-    ClarityModule
+    FormsModule,
+    ClarityModule,
+    MasterdataRoutingModule
   ],
   declarations: [
     MasterdataNavComponent,
     PotatoMasterdataComponent,
     FarmMasterdataComponent,
-    FieldMasterdataComponent,
     FarmMasterdataListComponent,
     FarmMasterdataFilterComponent,
     PotatoMasterdataFilterComponent,
@@ -44,6 +45,9 @@ import { DeviceMasterdataListComponent } from './device-masterdata-list/device-m
     FarmMasterdataFilterComponent,
     PotatoMasterdataFilterComponent,
     PlotMasterdataFilterComponent
+  ],
+  providers: [
+    FarmMasterdataService
   ]
 })
 export class MasterdataModule { }

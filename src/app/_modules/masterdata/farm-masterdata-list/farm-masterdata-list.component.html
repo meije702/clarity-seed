@@ -1,3 +1,14 @@
-<p>
-  farm-masterdata-list works!
-</p>
+<clr-datagrid>
+    <clr-dg-column [clrDgField]="'Farm'">Farm</clr-dg-column>
+    <clr-dg-column [clrDgField]="'Farm'">Farm</clr-dg-column>
+
+
+    <clr-dg-row *clrDgItems="let farm of farms" [clrDgItem]="farm">
+        <clr-dg-cell>{{farm.name}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} Farms
+        <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+    </clr-dg-footer>
+</clr-datagrid>
