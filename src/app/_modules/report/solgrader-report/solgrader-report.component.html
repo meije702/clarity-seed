@@ -1,21 +1,18 @@
-<clr-tree-node [(clrTreeNodeExpanded)]="expanded">
-    Master data filter
-    <clr-tree-node [clrTreeNodeExpanded]="true">
-        Potato selection
-        <clr-tree-node>
-            <app-potato-masterdata-filter></app-potato-masterdata-filter>
-        </clr-tree-node>
+<clr-tree-node>
+    Potato selection
+    <clr-tree-node>
+        <app-potato-masterdata-filter></app-potato-masterdata-filter>
     </clr-tree-node>
-    <clr-tree-node [clrTreeNodeExpanded]="true">
-        Fasrm selection
-        <clr-tree-node>
-            <app-farm-masterdata-filter></app-farm-masterdata-filter>
-        </clr-tree-node>
+</clr-tree-node>
+<clr-tree-node>
+    Farm selection
+    <clr-tree-node>
+        <app-farm-masterdata-filter></app-farm-masterdata-filter>
     </clr-tree-node>
-    <clr-tree-node [clrTreeNodeExpanded]="true">
-        Plot selection
-        <clr-tree-node>
-            <app-plot-masterdata-filter></app-plot-masterdata-filter>
-        </clr-tree-node>
+</clr-tree-node>
+<clr-tree-node>
+    Plot selection
+    <clr-tree-node>
+        <app-plot-masterdata-list></app-plot-masterdata-list>
     </clr-tree-node>
 </clr-tree-node>

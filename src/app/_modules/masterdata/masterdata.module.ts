@@ -1,3 +1,4 @@
+import { PotatoDynamicdataService } from './_services/potato-dynamicdata.service';
 import { PotatoMasterdataService } from './_services/potato-masterdata.service';
 import { PlotMasterdataService } from './_services/plot-masterdata.service';
 import { FormsModule } from '@angular/forms';
@@ -46,12 +47,14 @@ import { FarmMasterdataService } from './_services/farm-masterdata.service';
   exports: [
     FarmMasterdataFilterComponent,
     PotatoMasterdataFilterComponent,
-    PlotMasterdataFilterComponent
+    PlotMasterdataFilterComponent,
+    PlotMasterdataListComponent
   ],
   providers: [
     FarmMasterdataService,
     PlotMasterdataService,
-    PotatoMasterdataService
+    PotatoMasterdataService,
+    PotatoDynamicdataService
   ]
 })
 export class MasterdataModule { }
