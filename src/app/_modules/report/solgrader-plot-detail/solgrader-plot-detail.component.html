@@ -1,9 +1,19 @@
 <div class="col-xs-12">
     <span>Average Potatocount : {{avgPotatoCount}}</span>
+    <clr-tabs>
+        <clr-tab-link [clrTabLinkActive]="true">Data</clr-tab-link>
+        <clr-tab-link>Graphs</clr-tab-link>
+
+        <clr-tab-content [clrTabContentActive]="true">
+            <clr-datagrid>
+                <clr-dg-column [clrDgField]="'Sample'">Time</clr-dg-column>
+                <clr-dg-row *clrDgItems="let sample of PotatoSamples" [clrDgItem]="sample">
+                    <clr-dg-cell>{{sample.timestamp}}</clr-dg-cell>
+                </clr-dg-row>
+            </clr-datagrid>
+        </clr-tab-content>
+        <clr-tab-content>
+
+        </clr-tab-content>
+    </clr-tabs>
 </div>
-<clr-datagrid>
-    <clr-dg-column [clrDgField]="'timestamp'">Time</clr-dg-column>
-    <clr-dg-row *clrDgItems="let sample of PotatoSamples" [clrDgItem]="sample">
-        <clr-dg-cell>{{sample.timestamp}}</clr-dg-cell>
-    </clr-dg-row>
-</clr-datagrid>
