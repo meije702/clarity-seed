@@ -1,3 +1,9 @@
-<p>
-  solgrader-plot-detail works!
-</p>
+<div class="col-xs-12">
+    <span>Average Potatocount : {{avgPotatoCount}}</span>
+</div>
+<clr-datagrid>
+    <clr-dg-column [clrDgField]="'timestamp'">Time</clr-dg-column>
+    <clr-dg-row *clrDgItems="let sample of PotatoSamples" [clrDgItem]="sample">
+        <clr-dg-cell>{{sample.timestamp}}</clr-dg-cell>
+    </clr-dg-row>
+</clr-datagrid>

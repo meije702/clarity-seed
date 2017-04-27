@@ -26,9 +26,8 @@
                 <clr-dg-cell>{{plot.breed}}</clr-dg-cell>
                 <clr-dg-cell>{{plot.row_width}}</clr-dg-cell>
                 <clr-dg-cell>{{plot.plant_spacing}}</clr-dg-cell>
-                <clr-dg-row-detail *clrIfExpanded>
-                    Lorem ipsum...
-                </clr-dg-row-detail>
+
+                <app-solgrader-plot-detail *clrIfExpanded [plot]="plot" ngProjectAs='clr-dg-row-detail'></app-solgrader-plot-detail>
             </clr-dg-row>
 
             <clr-dg-footer>
