@@ -1,18 +1,40 @@
 <clr-tree-node>
     Potato selection
     <clr-tree-node>
-        <app-potato-masterdata-filter></app-potato-masterdata-filter>
     </clr-tree-node>
 </clr-tree-node>
 <clr-tree-node>
     Farm selection
     <clr-tree-node>
-        <app-farm-masterdata-filter></app-farm-masterdata-filter>
     </clr-tree-node>
 </clr-tree-node>
 <clr-tree-node>
     Plot selection
     <clr-tree-node>
-        <app-plot-masterdata-list></app-plot-masterdata-list>
+        <clr-datagrid>
+            <clr-dg-column [clrDgField]="'name'">Plot</clr-dg-column>
+            <clr-dg-column [clrDgField]="'surface'">Surface(a)</clr-dg-column>
+            <clr-dg-column [clrDgField]="'year'">Year</clr-dg-column>
+            <clr-dg-column [clrDgField]="'breed'">breed</clr-dg-column>
+            <clr-dg-column [clrDgField]="'row_width'">row width</clr-dg-column>
+            <clr-dg-column [clrDgField]="'plant_spacing'">plant spacing</clr-dg-column>
+
+            <clr-dg-row *clrDgItems="let plot of plots" [clrDgItem]="plot">
+                <clr-dg-cell>{{plot.name}}</clr-dg-cell>
+                <clr-dg-cell>{{plot.surface}}</clr-dg-cell>
+                <clr-dg-cell>{{plot.year}}</clr-dg-cell>
+                <clr-dg-cell>{{plot.breed}}</clr-dg-cell>
+                <clr-dg-cell>{{plot.row_width}}</clr-dg-cell>
+                <clr-dg-cell>{{plot.plant_spacing}}</clr-dg-cell>
+                <clr-dg-row-detail *clrIfExpanded>
+                    Lorem ipsum...
+                </clr-dg-row-detail>
+            </clr-dg-row>
+
+            <clr-dg-footer>
+                {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} plots
+                <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+            </clr-dg-footer>
+        </clr-datagrid>
     </clr-tree-node>
 </clr-tree-node>

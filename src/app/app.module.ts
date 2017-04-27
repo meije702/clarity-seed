@@ -7,6 +7,7 @@ import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from './app.routing';
 import { HomeComponent } from './home/home.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { HomeComponent } from './home/home.component';
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
+        ChartsModule,
         ClarityModule.forRoot(),
         ROUTING
     ],

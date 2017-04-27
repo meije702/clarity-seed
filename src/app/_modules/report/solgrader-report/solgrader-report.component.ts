@@ -1,3 +1,5 @@
+import { PlotMasterdataService } from '../../masterdata/_services/plot-masterdata.service';
+import { Plot } from '../../masterdata/_models/plot';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class SolgraderReportComponent implements OnInit {
-  public filterFarms = true;
-  public filterPotatoes = true;
-  public filterPlots = false;
+  plots: Plot[];
+  selectedPlots: Plot[];
 
-  constructor() { }
+  constructor(private plotService: PlotMasterdataService) { }
 
   ngOnInit() {
+    this.plots = this.getPlots();
   }
 
+  private getPlots(): Plot[] {
+      return this.plotService.getPlots();
+  }
 }

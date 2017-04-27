@@ -1,7 +1,7 @@
 {
     "project": {
-        "version": "1.0.0",
-        "name": "clarity-seed"
+        "version": "0.5.0",
+        "name": "Solentum web portal"
     },
     "apps": [
         {
