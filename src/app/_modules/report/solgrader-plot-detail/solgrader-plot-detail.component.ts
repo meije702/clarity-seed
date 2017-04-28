@@ -21,7 +21,7 @@ export class SolgraderPlotDetailComponent implements OnInit {
 
     public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
     public lineChartOptions: any = {
-        responsive: true
+        responsive: false
     };
 
     public lineChartColors: Array<any> = [
