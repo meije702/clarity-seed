@@ -6,6 +6,20 @@
 <clr-tree-node>
     Farm selection
     <clr-tree-node>
+        <clr-datagrid [(clrDgSelected)]="selectedFarms">
+            <clr-dg-column [clrDgField]="'name'">Farm</clr-dg-column>
+
+            <clr-dg-row *clrDgItems="let farm of farms" [clrDgItem]="farm">
+                <clr-dg-cell>{{farm.name}}</clr-dg-cell>
+
+                <app-solgrader-farm-detail *clrIfExpanded [farm]="farm" ngProjectAs='clr-dg-row-detail'></app-solgrader-farm-detail>
+            </clr-dg-row>
+
+            <clr-dg-footer>
+                {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} farms
+                <clr-dg-pagination #pagination [clrDgPageSize]="2"></clr-dg-pagination>
+            </clr-dg-footer>
+        </clr-datagrid>        
     </clr-tree-node>
 </clr-tree-node>
 <clr-tree-node>
@@ -32,7 +46,7 @@
 
             <clr-dg-footer>
                 {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} plots
-                <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+                <clr-dg-pagination #pagination [clrDgPageSize]="8"></clr-dg-pagination>
             </clr-dg-footer>
         </clr-datagrid>
     </clr-tree-node>
