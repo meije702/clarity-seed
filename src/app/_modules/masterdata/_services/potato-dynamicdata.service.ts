@@ -1,3 +1,4 @@
+import { PotatoYield } from '../_models/potato-yield';
 import { forEach } from '@angular/router/src/utils/collection';
 import { Plot } from '../_models/plot';
 import { FARMS } from './mock-farm-masterdata';
@@ -20,6 +21,9 @@ export class PotatoDynamicdataService {
           plot.farm = farm;
           for (let sample of plot.samples) {
             sample.plot = plot;
+            sample.potatoYield = new PotatoYield();
+            sample.potatoYield.sample = sample;
+            sample.potatoYield.calculateYield();
             this.allPotatoSamples.push(sample);
           }
         }
@@ -27,15 +31,15 @@ export class PotatoDynamicdataService {
     }
   }
 
-  getPotatoSamples(): PotatoSample[] {
+  public getPotatoSamples(): PotatoSample[] {
     return this.allPotatoSamples;
   }
 
-  getPotatoSamplesForPlot(plot: Plot): PotatoSample[] {
+  public getPotatoSamplesForPlot(plot: Plot): PotatoSample[] {
     return this.allPotatoSamples.filter(sample => sample.plot.id === plot.id);
   }
 
-  getAvgPotatoCountFromSamples(samples: PotatoSample[]): number {
+  public getAvgPotatoCountFromSamples(samples: PotatoSample[]): number {
     let potatoCount = 0;
     let photoCount = 0;
     for (let sample of samples) {
@@ -45,6 +49,26 @@ export class PotatoDynamicdataService {
       }
     }
     return photoCount > 0 ? potatoCount / photoCount : 0;
+  }
+
+  public getYieldforBreed(breed: string): PotatoYield {
+    let samples: PotatoSample[] = this.allPotatoSamples.filter(sample => sample.plot.breed === breed);
+    let potatoYield: PotatoYield = new PotatoYield();
+
+    for (let sample of samples) {
+      potatoYield.totalYield += sample.potatoYield.totalYield;
+      for (let i = 0; i <= 5; i++) {
+        potatoYield.yieldPerSize[i] = sample.potatoYield.yieldPerSize[i];
+      }
+    }
+
+    potatoYield.totalYield = potatoYield.totalYield / samples.length;
+
+    for (let i = 0; i <= 5; i++) {
+      potatoYield.yieldPerSize[i] = potatoYield.yieldPerSize[i] / samples.length;
+    }
+
+    return potatoYield;
   }
 
 }
