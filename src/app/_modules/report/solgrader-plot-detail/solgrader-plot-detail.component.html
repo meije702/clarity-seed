@@ -6,14 +6,20 @@
 
         <clr-tab-content [clrTabContentActive]="true">
             <clr-datagrid>
-                <clr-dg-column [clrDgField]="'Sample'">Time</clr-dg-column>
+                <clr-dg-column [clrDgField]="'Sample'">Sample</clr-dg-column>
                 <clr-dg-row *clrDgItems="let sample of PotatoSamples" [clrDgItem]="sample">
                     <clr-dg-cell>{{sample.timestamp}}</clr-dg-cell>
                 </clr-dg-row>
             </clr-datagrid>
         </clr-tab-content>
         <clr-tab-content>
-
+            <div class="row">
+                <div class="col-xs-6">
+                    <canvas baseChart width="50" height="50" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+            </div>
         </clr-tab-content>
     </clr-tabs>
 </div>
