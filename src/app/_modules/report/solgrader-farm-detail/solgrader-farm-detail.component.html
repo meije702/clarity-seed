@@ -4,11 +4,14 @@
         <clr-tab-link>Graphs</clr-tab-link>
 
         <clr-tab-content [clrTabContentActive]="true">
-          <span>data</span>
         </clr-tab-content>
         <clr-tab-content>
-          <span>data</span>
-            <!--Graph here -->
+            <div class="row">
+                <div class="col-xs-6">
+                    <canvas baseChart width="1800" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [chartType]="lineChartType">
+                    </canvas>
+                </div>
+            </div>
         </clr-tab-content>
     </clr-tabs>
 </div>

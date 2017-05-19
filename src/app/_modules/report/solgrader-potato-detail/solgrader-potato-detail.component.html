@@ -6,6 +6,12 @@
         <clr-tab-content [clrTabContentActive]="true">
         </clr-tab-content>
         <clr-tab-content>
+            <div class="row">
+                <div class="col-xs-6">
+                    <canvas baseChart width="1800" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [chartType]="lineChartType">
+                    </canvas>
+                </div>
+            </div>
         </clr-tab-content>
     </clr-tabs>
 </div>
